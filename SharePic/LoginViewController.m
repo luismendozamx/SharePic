@@ -32,8 +32,13 @@
     }else{
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if(error){
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo sentimos, hubo un error validar tus datos." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                [alertView show];
+                if([error code] == kPFErrorConnectionFailed){
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo sentimos, no es posible comunicarse con el servidor." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alertView show];
+                }else if (error){
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo sentimos, se generó un error." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alertView show];
+                }
             }else{
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }

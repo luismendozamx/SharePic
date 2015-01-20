@@ -15,12 +15,12 @@
     [super viewDidLoad];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
-    [query orderByAscending:@"Nombre"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [query orderByAscending:@"eventName"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *events, NSError *error) {
         if(error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }else{
-            self.events = objects;
+            self.events = events;
             [self.tableView reloadData];
         }
     }];
@@ -47,7 +47,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     PFObject* event = [self.events objectAtIndex:indexPath.row];
-    cell.textLabel.text = event[@"Nombre"];
+    cell.textLabel.text = event[@"eventName"];
     
     if([self hasJoinedEvent:event]){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;

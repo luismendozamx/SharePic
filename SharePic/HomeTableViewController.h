@@ -14,6 +14,7 @@
 @property(nonatomic, strong) PFRelation* eventsRelation;
 @property(nonatomic, strong) NSMutableArray* eventsJoined;
 @property(nonatomic, strong) PFUser* currentUser;
+@property(nonatomic, strong) PFObject* eventSelected;
 
 - (IBAction)logOutButton:(id)sender;
 -(void) addEvent:(id)sender;

@@ -8,6 +8,7 @@
 
 #import "HomeTableViewController.h"
 #import "EditEventosTableViewController.h"
+#import "EventoCollectionViewController.h"
 #import <Parse/Parse.h>
 
 @implementation HomeTableViewController
@@ -36,12 +37,12 @@
     
     //Query Backend for events joined
     PFQuery *query = [self.eventsRelation query];
-    [query orderByAscending:@"Nombre"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [query orderByAscending:@"eventName"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *events, NSError *error) {
         if(error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }else{
-            self.eventsJoined = [NSMutableArray arrayWithArray:objects];
+            self.eventsJoined = [NSMutableArray arrayWithArray:events];
             [self.tableView reloadData];
         }
     }];
@@ -68,9 +69,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     PFObject *event = [self.eventsJoined objectAtIndex:indexPath.row];
-    cell.textLabel.text = event[@"Nombre"];
+    cell.textLabel.text = event[@"eventName"];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    self.eventSelected = [self.eventsJoined objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"ShowEventCollection" sender:self];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -82,6 +91,12 @@
         EditEventosTableViewController* editTVC = (EditEventosTableViewController *) segue.destinationViewController;
         editTVC.eventsJoined = self.eventsJoined;
         editTVC.currentUser = self.currentUser;
+    }
+    
+    if ([segue.identifier isEqualToString:@"ShowEventCollection"]){
+        EventoCollectionViewController* eventCVC = (EventoCollectionViewController *) segue.destinationViewController;
+        eventCVC.event = self.eventSelected;
+        eventCVC.currentUser = self.currentUser;
     }
 }
 
