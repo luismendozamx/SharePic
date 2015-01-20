@@ -30,7 +30,8 @@
 		1E94ABDF1A6DF65F00898055 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABDE1A6DF65F00898055 /* ParseUI.framework */; };
 		1E94ABE21A6DF83900898055 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE11A6DF83900898055 /* LoginViewController.m */; };
 		1E94ABE51A6DFB9900898055 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE41A6DFB9900898055 /* SignUpViewController.m */; };
-		1E94ABE81A6E0DB900898055 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE71A6E0DB900898055 /* HomeViewController.m */; };
+		1EEE884F1A6ECC14008B84FC /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */; };
+		1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +75,10 @@
 		1E94ABE11A6DF83900898055 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1E94ABE31A6DFB9900898055 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		1E94ABE41A6DFB9900898055 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		1E94ABE61A6E0DB900898055 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		1E94ABE71A6E0DB900898055 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		1EEE884D1A6ECC14008B84FC /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		1EEE88501A6ED56E008B84FC /* EditEventosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventosTableViewController.h; sourceTree = "<group>"; };
+		1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventosTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +146,10 @@
 				1E94ABE11A6DF83900898055 /* LoginViewController.m */,
 				1E94ABE31A6DFB9900898055 /* SignUpViewController.h */,
 				1E94ABE41A6DFB9900898055 /* SignUpViewController.m */,
-				1E94ABE61A6E0DB900898055 /* HomeViewController.h */,
-				1E94ABE71A6E0DB900898055 /* HomeViewController.m */,
+				1EEE884D1A6ECC14008B84FC /* HomeTableViewController.h */,
+				1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */,
+				1EEE88501A6ED56E008B84FC /* EditEventosTableViewController.h */,
+				1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */,
 			);
 			path = SharePic;
 			sourceTree = "<group>";
@@ -300,8 +305,9 @@
 			files = (
 				1E94AB9E1A6DF37A00898055 /* AppDelegate.m in Sources */,
 				1E94ABE51A6DFB9900898055 /* SignUpViewController.m in Sources */,
+				1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */,
 				1E94AB9B1A6DF37A00898055 /* main.m in Sources */,
-				1E94ABE81A6E0DB900898055 /* HomeViewController.m in Sources */,
+				1EEE884F1A6ECC14008B84FC /* HomeTableViewController.m in Sources */,
 				1E94ABE21A6DF83900898055 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +511,7 @@
 				1E94ABBD1A6DF37A00898055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E94ABBE1A6DF37A00898055 /* Build configuration list for PBXNativeTarget "SharePicTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +520,7 @@
 				1E94ABC01A6DF37A00898055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
