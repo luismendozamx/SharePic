@@ -33,6 +33,7 @@
 		1EEE884F1A6ECC14008B84FC /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */; };
 		1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */; };
 		1EEE88551A6F18A9008B84FC /* EventoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE88541A6F18A9008B84FC /* EventoCollectionViewController.m */; };
+		1EFD08A71A6F69CA002E8574 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFD08A61A6F69CA002E8574 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventosTableViewController.m; sourceTree = "<group>"; };
 		1EEE88531A6F18A9008B84FC /* EventoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoCollectionViewController.h; sourceTree = "<group>"; };
 		1EEE88541A6F18A9008B84FC /* EventoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoCollectionViewController.m; sourceTree = "<group>"; };
+		1EFD08A51A6F69CA002E8574 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		1EFD08A61A6F69CA002E8574 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */,
 				1EEE88531A6F18A9008B84FC /* EventoCollectionViewController.h */,
 				1EEE88541A6F18A9008B84FC /* EventoCollectionViewController.m */,
+				1EFD08A51A6F69CA002E8574 /* CameraViewController.h */,
+				1EFD08A61A6F69CA002E8574 /* CameraViewController.m */,
 			);
 			path = SharePic;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E94AB9E1A6DF37A00898055 /* AppDelegate.m in Sources */,
+				1EFD08A71A6F69CA002E8574 /* CameraViewController.m in Sources */,
 				1EEE88551A6F18A9008B84FC /* EventoCollectionViewController.m in Sources */,
 				1E94ABE51A6DFB9900898055 /* SignUpViewController.m in Sources */,
 				1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */,

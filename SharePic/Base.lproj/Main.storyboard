@@ -2,27 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rf8-gT-QKd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="gQB-4O-mbC">
-            <objects>
-                <viewController id="0aO-gS-70x" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iN9-Fe-IVW"/>
-                        <viewControllerLayoutGuide type="bottom" id="KCJ-1B-ngO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="exJ-mc-lKp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="a55-I2-wva"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AK5-dE-WZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1565" y="342"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="u8H-ys-oky">
             <objects>
@@ -79,6 +61,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phc-cv-8Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565" y="-320"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="ePU-oB-goi">
+            <objects>
+                <viewController id="jkd-V3-nJV" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hUy-Yp-0lK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hdE-go-VuD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vN0-ST-HTD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUY-Ah-ecB">
+                                <rect key="frame" x="175" y="280" width="250" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="U4g-xi-Lzm"/>
+                                </constraints>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-fK-Pop">
+                                <rect key="frame" x="200" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1TO-qq-GFH"/>
+                                    <constraint firstAttribute="height" constant="250" id="YpC-et-Q2i"/>
+                                    <constraint firstAttribute="width" constant="200" id="sin-ZZ-7IH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YpC-et-Q2i"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="YpC-et-Q2i"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-DW-BFS">
+                                <rect key="frame" x="277" y="450" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Vr1-Re-vug"/>
+                                </constraints>
+                                <state key="normal" title="Enviar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButton:" destination="jkd-V3-nJV" eventType="touchUpInside" id="xIo-p5-88g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nPg-DW-BFS" secondAttribute="centerX" id="0hS-fS-cw7"/>
+                            <constraint firstItem="hdE-go-VuD" firstAttribute="top" secondItem="XUY-Ah-ecB" secondAttribute="bottom" constant="80" id="76b-zT-X7p"/>
+                            <constraint firstAttribute="centerX" secondItem="TLV-fK-Pop" secondAttribute="centerX" id="GaZ-d1-RWu"/>
+                            <constraint firstAttribute="centerX" secondItem="XUY-Ah-ecB" secondAttribute="centerX" id="P3t-53-iAW"/>
+                            <constraint firstItem="TLV-fK-Pop" firstAttribute="top" secondItem="hUy-Yp-0lK" secondAttribute="bottom" constant="13" id="UuE-VX-rMu"/>
+                            <constraint firstItem="nPg-DW-BFS" firstAttribute="centerX" secondItem="XUY-Ah-ecB" secondAttribute="centerX" id="Z9d-8a-m3F"/>
+                            <constraint firstItem="XUY-Ah-ecB" firstAttribute="top" secondItem="TLV-fK-Pop" secondAttribute="bottom" constant="8" id="bOn-zv-rWf"/>
+                            <constraint firstItem="XUY-Ah-ecB" firstAttribute="trailing" secondItem="TLV-fK-Pop" secondAttribute="trailing" id="fqP-5y-adP"/>
+                            <constraint firstItem="nPg-DW-BFS" firstAttribute="top" secondItem="XUY-Ah-ecB" secondAttribute="bottom" constant="8" id="g38-v2-gXu"/>
+                            <constraint firstItem="XUY-Ah-ecB" firstAttribute="leading" secondItem="TLV-fK-Pop" secondAttribute="leading" id="hAA-1t-XHn"/>
+                            <constraint firstItem="TLV-fK-Pop" firstAttribute="centerX" secondItem="vN0-ST-HTD" secondAttribute="centerX" id="mXf-vu-MOu"/>
+                            <constraint firstItem="TLV-fK-Pop" firstAttribute="leading" secondItem="vN0-ST-HTD" secondAttribute="leadingMargin" constant="59" id="tZF-Ox-gjY"/>
+                            <constraint firstItem="TLV-fK-Pop" firstAttribute="top" secondItem="hUy-Yp-0lK" secondAttribute="bottom" constant="8" id="twf-Fh-zdg"/>
+                            <constraint firstItem="hdE-go-VuD" firstAttribute="top" secondItem="nPg-DW-BFS" secondAttribute="bottom" constant="56" id="xBb-Sm-KpE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UuE-VX-rMu"/>
+                                <exclude reference="mXf-vu-MOu"/>
+                                <exclude reference="tZF-Ox-gjY"/>
+                                <exclude reference="fqP-5y-adP"/>
+                                <exclude reference="hAA-1t-XHn"/>
+                                <exclude reference="Z9d-8a-m3F"/>
+                                <exclude reference="76b-zT-X7p"/>
+                                <exclude reference="xBb-Sm-KpE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="UuE-VX-rMu"/>
+                                <include reference="mXf-vu-MOu"/>
+                                <include reference="tZF-Ox-gjY"/>
+                                <include reference="fqP-5y-adP"/>
+                                <include reference="hAA-1t-XHn"/>
+                                <include reference="Z9d-8a-m3F"/>
+                                <include reference="76b-zT-X7p"/>
+                                <include reference="xBb-Sm-KpE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="rk4-Q4-w5y">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="XAi-Pt-RvN">
+                            <connections>
+                                <action selector="cancelButton:" destination="jkd-V3-nJV" id="v8R-OI-a1N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventPickerView" destination="XUY-Ah-ecB" id="nBG-KF-0St"/>
+                        <outlet property="previewImageView" destination="TLV-fK-Pop" id="qt6-w2-EVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRt-S2-6ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565" y="366"/>
         </scene>
         <!--Edit Eventos Table View Controller-->
         <scene sceneID="bJM-4E-mlj">
@@ -302,11 +391,11 @@
             </objects>
             <point key="canvasLocation" x="2984" y="-1384"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="K9E-1U-rJQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IXk-DE-ynX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="x4D-fe-M9E"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="x4D-fe-M9E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnh-Z0-Kyi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -321,11 +410,11 @@
             </objects>
             <point key="canvasLocation" x="804" y="-320"/>
         </scene>
-        <!--Item 2-->
+        <!--Camera-->
         <scene sceneID="Hpj-kB-aRe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qdx-fR-eKs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Auq-rW-F7G"/>
+                    <tabBarItem key="tabBarItem" title="Camera" id="Auq-rW-F7G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y4O-08-lEt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -333,7 +422,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0aO-gS-70x" kind="relationship" relationship="rootViewController" id="kXQ-A7-G4C"/>
+                        <segue destination="jkd-V3-nJV" kind="relationship" relationship="rootViewController" id="1XA-wV-gdw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGa-ll-xL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
