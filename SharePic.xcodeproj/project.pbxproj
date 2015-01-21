@@ -24,12 +24,12 @@
 		1E94ABD21A6DF5E600898055 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABD11A6DF5E600898055 /* SystemConfiguration.framework */; };
 		1E94ABD41A6DF5F000898055 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABD31A6DF5F000898055 /* libz.dylib */; };
 		1E94ABD61A6DF5FA00898055 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABD51A6DF5FA00898055 /* libsqlite3.dylib */; };
-		1E94ABD91A6DF64900898055 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABD81A6DF64900898055 /* Bolts.framework */; };
-		1E94ABDB1A6DF65200898055 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABDA1A6DF65200898055 /* Parse.framework */; };
-		1E94ABDD1A6DF65900898055 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABDC1A6DF65900898055 /* ParseFacebookUtils.framework */; };
-		1E94ABDF1A6DF65F00898055 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABDE1A6DF65F00898055 /* ParseUI.framework */; };
 		1E94ABE21A6DF83900898055 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE11A6DF83900898055 /* LoginViewController.m */; };
 		1E94ABE51A6DFB9900898055 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE41A6DFB9900898055 /* SignUpViewController.m */; };
+		1EC10C751A701B11008051FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C711A701B11008051FA /* Bolts.framework */; };
+		1EC10C761A701B11008051FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C721A701B11008051FA /* Parse.framework */; };
+		1EC10C771A701B11008051FA /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C731A701B11008051FA /* ParseFacebookUtils.framework */; };
+		1EC10C781A701B11008051FA /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C741A701B11008051FA /* ParseUI.framework */; };
 		1EEE884F1A6ECC14008B84FC /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */; };
 		1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE88511A6ED56E008B84FC /* EditEventosTableViewController.m */; };
 		1EEE88551A6F18A9008B84FC /* EventoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE88541A6F18A9008B84FC /* EventoCollectionViewController.m */; };
@@ -69,14 +69,14 @@
 		1E94ABD11A6DF5E600898055 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1E94ABD31A6DF5F000898055 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1E94ABD51A6DF5FA00898055 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		1E94ABD81A6DF64900898055 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		1E94ABDA1A6DF65200898055 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		1E94ABDC1A6DF65900898055 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		1E94ABDE1A6DF65F00898055 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		1E94ABE01A6DF83900898055 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1E94ABE11A6DF83900898055 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1E94ABE31A6DFB9900898055 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		1E94ABE41A6DFB9900898055 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		1EC10C711A701B11008051FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		1EC10C721A701B11008051FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
+		1EC10C731A701B11008051FA /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = Frameworks/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		1EC10C741A701B11008051FA /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = Frameworks/ParseUI.framework; sourceTree = "<group>"; };
 		1EEE884D1A6ECC14008B84FC /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		1EEE884E1A6ECC14008B84FC /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		1EEE88501A6ED56E008B84FC /* EditEventosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventosTableViewController.h; sourceTree = "<group>"; };
@@ -92,19 +92,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E94ABDD1A6DF65900898055 /* ParseFacebookUtils.framework in Frameworks */,
+				1EC10C771A701B11008051FA /* ParseFacebookUtils.framework in Frameworks */,
 				1E94ABD61A6DF5FA00898055 /* libsqlite3.dylib in Frameworks */,
 				1E94ABD41A6DF5F000898055 /* libz.dylib in Frameworks */,
 				1E94ABD21A6DF5E600898055 /* SystemConfiguration.framework in Frameworks */,
-				1E94ABD91A6DF64900898055 /* Bolts.framework in Frameworks */,
+				1EC10C751A701B11008051FA /* Bolts.framework in Frameworks */,
 				1E94ABD01A6DF5DC00898055 /* StoreKit.framework in Frameworks */,
 				1E94ABCE1A6DF5D300898055 /* Security.framework in Frameworks */,
-				1E94ABDB1A6DF65200898055 /* Parse.framework in Frameworks */,
+				1EC10C761A701B11008051FA /* Parse.framework in Frameworks */,
 				1E94ABCC1A6DF5CE00898055 /* QuartzCore.framework in Frameworks */,
 				1E94ABCA1A6DF5C600898055 /* MobileCoreServices.framework in Frameworks */,
 				1E94ABC81A6DF5B300898055 /* CoreLocation.framework in Frameworks */,
 				1E94ABC61A6DF5AD00898055 /* CoreGraphics.framework in Frameworks */,
-				1E94ABDF1A6DF65F00898055 /* ParseUI.framework in Frameworks */,
+				1EC10C781A701B11008051FA /* ParseUI.framework in Frameworks */,
 				1E94ABC41A6DF59F00898055 /* CFNetwork.framework in Frameworks */,
 				1E94ABC21A6DF59900898055 /* AudioToolbox.framework in Frameworks */,
 			);
@@ -193,10 +193,10 @@
 		1E94ABD71A6DF60700898055 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E94ABDE1A6DF65F00898055 /* ParseUI.framework */,
-				1E94ABDC1A6DF65900898055 /* ParseFacebookUtils.framework */,
-				1E94ABDA1A6DF65200898055 /* Parse.framework */,
-				1E94ABD81A6DF64900898055 /* Bolts.framework */,
+				1EC10C711A701B11008051FA /* Bolts.framework */,
+				1EC10C721A701B11008051FA /* Parse.framework */,
+				1EC10C731A701B11008051FA /* ParseFacebookUtils.framework */,
+				1EC10C741A701B11008051FA /* ParseUI.framework */,
 				1E94ABD51A6DF5FA00898055 /* libsqlite3.dylib */,
 				1E94ABD31A6DF5F000898055 /* libz.dylib */,
 				1E94ABD11A6DF5E600898055 /* SystemConfiguration.framework */,
@@ -446,6 +446,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SharePic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +463,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SharePic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
