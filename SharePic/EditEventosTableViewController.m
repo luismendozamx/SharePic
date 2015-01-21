@@ -92,7 +92,6 @@
     
 }
 
-
 -(BOOL) hasJoinedEvent:(PFObject *)event{
     for (PFObject* eventJoined in self.eventsJoined) {
         if ([eventJoined.objectId isEqual:event.objectId]){
