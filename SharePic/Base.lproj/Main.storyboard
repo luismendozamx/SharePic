@@ -419,7 +419,7 @@
         <scene sceneID="K9E-1U-rJQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IXk-DE-ynX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="x4D-fe-M9E"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="inbox" id="x4D-fe-M9E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnh-Z0-Kyi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -438,7 +438,7 @@
         <scene sceneID="Hpj-kB-aRe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qdx-fR-eKs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" id="Auq-rW-F7G"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="Auq-rW-F7G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y4O-08-lEt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -454,4 +454,8 @@
             <point key="canvasLocation" x="804" y="342"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="33" height="24"/>
+        <image name="inbox" width="32" height="21"/>
+    </resources>
 </document>

@@ -31,12 +31,7 @@
     
     //Add button on nav bar pointing to edit events
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent:)]];
-    
-    // init photo browser.
-    browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-    
-    [browser setCurrentPhotoIndex:1];
-    
+
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -113,7 +108,6 @@
     }*/
     
     if ([segue.identifier isEqualToString:@"ShowEventPhotos"]){
-        
         /*[segue.destinationViewController setHidesBottomBarWhenPushed:YES];
         PhotoBrowserViewController* photoBrowser = (PhotoBrowserViewController *) segue.destinationViewController;
         photoBrowser.event = self.eventSelected;
@@ -131,12 +125,24 @@
     return nil;
 }
 
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+
 -(void) reloadBrowserData{
     browser = nil;
     self.photos = nil;
     self.thumbnails = nil;
     self.serverData = nil;
+    
+    //init browser
     browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.enableGrid = YES;
+    browser.startOnGrid = NO;
+    browser.displayActionButton = NO;
+    [browser setCurrentPhotoIndex:0];
 }
 
 

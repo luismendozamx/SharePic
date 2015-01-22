@@ -122,7 +122,7 @@
         [self presentViewController: self.imagePicker animated:YES completion:nil];
     }else{
         [self uploadMessage];
-        [self.tabBarController setSelectedIndex:0];
+        //[self.tabBarController setSelectedIndex:0];
     }
 }
 
@@ -145,25 +145,22 @@
     }
     
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
-    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    PFObject *photo = [PFObject objectWithClassName:@"Photo"];
+    [photo setObject:file forKey:@"file"];
+    [photo setObject:fileType forKey:@"fileType"];
+    [photo setObject:self.eventSelected.objectId forKey:@"eventId"];
+    [photo setObject:self.currentUser.objectId forKey:@"userId"];
+    
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(error){
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alertView show];
         }else{
-            PFObject *photo = [PFObject objectWithClassName:@"Photo"];
-            [photo setObject:file forKey:@"file"];
-            [photo setObject:fileType forKey:@"fileType"];
-            [photo setObject:self.eventSelected.objectId forKey:@"eventId"];
-            [photo setObject:self.currentUser.objectId forKey:@"userId"];
-            
-            [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if(error){
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                    [alertView show];
-                }else{
-                    [self reset];
-                }
-            }];
+            [self reset];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Gracias" message:@"Se ha enviado tu foto." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alertView show];
+            [self reset];
+            [self.tabBarController setSelectedIndex:0];
         }
     }];
 }
@@ -226,6 +223,7 @@
 -(void) reset{
     self.image = nil;
     self.videoFilePath = nil;
+    self.previewImageView.image = nil;
 }
 
 @end
