@@ -26,6 +26,7 @@
 		1E94ABD61A6DF5FA00898055 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E94ABD51A6DF5FA00898055 /* libsqlite3.dylib */; };
 		1E94ABE21A6DF83900898055 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE11A6DF83900898055 /* LoginViewController.m */; };
 		1E94ABE51A6DFB9900898055 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E94ABE41A6DFB9900898055 /* SignUpViewController.m */; };
+		1E9B9CB41A715E6400DD914A /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B9CB31A715E6400DD914A /* PhotoBrowserViewController.m */; };
 		1EC10C751A701B11008051FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C711A701B11008051FA /* Bolts.framework */; };
 		1EC10C761A701B11008051FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C721A701B11008051FA /* Parse.framework */; };
 		1EC10C771A701B11008051FA /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC10C731A701B11008051FA /* ParseFacebookUtils.framework */; };
@@ -116,6 +117,8 @@
 		1E94ABE11A6DF83900898055 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1E94ABE31A6DFB9900898055 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		1E94ABE41A6DFB9900898055 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		1E9B9CB21A715E6400DD914A /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
+		1E9B9CB31A715E6400DD914A /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
 		1EC10C711A701B11008051FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		1EC10C721A701B11008051FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
 		1EC10C731A701B11008051FA /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = Frameworks/ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				1EEE88541A6F18A9008B84FC /* EventoCollectionViewController.m */,
 				1EFD08A51A6F69CA002E8574 /* CameraViewController.h */,
 				1EFD08A61A6F69CA002E8574 /* CameraViewController.m */,
+				1E9B9CB21A715E6400DD914A /* PhotoBrowserViewController.h */,
+				1E9B9CB31A715E6400DD914A /* PhotoBrowserViewController.m */,
 			);
 			path = SharePic;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				1EEF02541A70911A00B2F980 /* SDImageCache.m in Sources */,
 				1EEE88521A6ED56E008B84FC /* EditEventosTableViewController.m in Sources */,
 				1EEF023D1A70911A00B2F980 /* MWTapDetectingImageView.m in Sources */,
+				1E9B9CB41A715E6400DD914A /* PhotoBrowserViewController.m in Sources */,
 				1EEF02841A70932800B2F980 /* PSTCollectionView.m in Sources */,
 				1E94AB9B1A6DF37A00898055 /* main.m in Sources */,
 				1EEF02581A70911A00B2F980 /* SDWebImageDownloaderOperation.m in Sources */,
