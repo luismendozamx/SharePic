@@ -9,9 +9,12 @@
 #import "HomeTableViewController.h"
 #import "EditEventosTableViewController.h"
 #import "EventoCollectionViewController.h"
+#import "PhotoBrowserViewController.h"
 #import <Parse/Parse.h>
 
-@implementation HomeTableViewController
+@implementation HomeTableViewController{
+    MWPhotoBrowser* browser;
+}
 
 -(void) viewDidLoad{
     
@@ -28,7 +31,7 @@
     
     //Add button on nav bar pointing to edit events
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent:)]];
-    
+
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -79,7 +82,12 @@
     
     self.eventSelected = [self.eventsJoined objectAtIndex:indexPath.row];
     
-    [self performSegueWithIdentifier:@"ShowEventCollection" sender:self];
+    //[self performSegueWithIdentifier:@"ShowEventCollection" sender:self];
+    //[self performSegueWithIdentifier:@"ShowEventPhotos" sender:self];
+    
+    [self reloadBrowserData];
+    [self.navigationController pushViewController:browser animated:YES];
+    [self getPhotos];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -93,10 +101,75 @@
         editTVC.currentUser = self.currentUser;
     }
     
-    if ([segue.identifier isEqualToString:@"ShowEventCollection"]){
+    /*if ([segue.identifier isEqualToString:@"ShowEventCollection"]){
         EventoCollectionViewController* eventCVC = (EventoCollectionViewController *) segue.destinationViewController;
         eventCVC.event = self.eventSelected;
         eventCVC.currentUser = self.currentUser;
+    }*/
+    
+    if ([segue.identifier isEqualToString:@"ShowEventPhotos"]){
+        /*[segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        PhotoBrowserViewController* photoBrowser = (PhotoBrowserViewController *) segue.destinationViewController;
+        photoBrowser.event = self.eventSelected;
+        photoBrowser.currentUser = self.currentUser;*/
+    }
+}
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return self.photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+
+-(void) reloadBrowserData{
+    browser = nil;
+    self.photos = nil;
+    self.thumbnails = nil;
+    self.serverData = nil;
+    
+    //init browser
+    browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.enableGrid = YES;
+    browser.startOnGrid = NO;
+    browser.displayActionButton = NO;
+    [browser setCurrentPhotoIndex:0];
+}
+
+
+-(void) getPhotos{
+    self.photos = [NSMutableArray array];
+    self.thumbnails = [NSMutableArray array];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
+    [query whereKey:@"eventId" equalTo:self.eventSelected.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(error){
+            NSLog(@"Error");
+        }else{
+            self.serverData = [NSMutableArray arrayWithArray:objects];
+            [self extractData];
+            [browser reloadData];
+        }
+    }];
+}
+
+-(void) extractData{
+    if(self.serverData != nil){
+        for (PFObject* event in self.serverData) {
+            PFFile *imageFile = [event objectForKey:@"file"];
+            MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:imageFile.url]];
+            [self.photos addObject:photo];
+        }
     }
 }
 
