@@ -4,7 +4,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target "SharePic" do
-
+  pod 'MWPhotoBrowser'
 end
 
 target "SharePicTests" do
