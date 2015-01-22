@@ -20,6 +20,7 @@
 @property (nonatomic, strong) PFObject* eventSelected;
 @property (strong, nonatomic) IBOutlet UIImageView *previewImageView;
 @property (strong, nonatomic) IBOutlet UIPickerView *eventPickerView;
+@property (strong, nonatomic) IBOutlet UIView *activityView;
 
 
 -(void) uploadMessage;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rf8-gT-QKd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rf8-gT-QKd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -110,15 +110,29 @@
                                     <action selector="sendButton:" destination="jkd-V3-nJV" eventType="touchUpInside" id="xIo-p5-88g"/>
                                 </connections>
                             </button>
+                            <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fB-dS-c1t">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3nr-1W-ATN"/>
+                                    <constraint firstAttribute="height" constant="100" id="y0k-vf-HOH"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dlu-kh-D1G">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="nPg-DW-BFS" secondAttribute="centerX" id="0hS-fS-cw7"/>
+                            <constraint firstItem="7fB-dS-c1t" firstAttribute="centerY" secondItem="Dlu-kh-D1G" secondAttribute="centerY" constant="0.5" id="2EA-qO-PPS"/>
                             <constraint firstItem="hdE-go-VuD" firstAttribute="top" secondItem="XUY-Ah-ecB" secondAttribute="bottom" constant="80" id="76b-zT-X7p"/>
                             <constraint firstAttribute="centerX" secondItem="TLV-fK-Pop" secondAttribute="centerX" id="GaZ-d1-RWu"/>
+                            <constraint firstAttribute="centerY" secondItem="7fB-dS-c1t" secondAttribute="centerY" id="Ll6-eG-0Qw"/>
                             <constraint firstAttribute="centerX" secondItem="XUY-Ah-ecB" secondAttribute="centerX" id="P3t-53-iAW"/>
                             <constraint firstItem="TLV-fK-Pop" firstAttribute="top" secondItem="hUy-Yp-0lK" secondAttribute="bottom" constant="13" id="UuE-VX-rMu"/>
                             <constraint firstItem="nPg-DW-BFS" firstAttribute="centerX" secondItem="XUY-Ah-ecB" secondAttribute="centerX" id="Z9d-8a-m3F"/>
+                            <constraint firstItem="7fB-dS-c1t" firstAttribute="centerX" secondItem="Dlu-kh-D1G" secondAttribute="centerX" constant="-0.5" id="aDt-9U-07h"/>
                             <constraint firstItem="XUY-Ah-ecB" firstAttribute="top" secondItem="TLV-fK-Pop" secondAttribute="bottom" constant="8" id="bOn-zv-rWf"/>
                             <constraint firstItem="XUY-Ah-ecB" firstAttribute="trailing" secondItem="TLV-fK-Pop" secondAttribute="trailing" id="fqP-5y-adP"/>
                             <constraint firstItem="nPg-DW-BFS" firstAttribute="top" secondItem="XUY-Ah-ecB" secondAttribute="bottom" constant="8" id="g38-v2-gXu"/>
@@ -127,6 +141,7 @@
                             <constraint firstItem="TLV-fK-Pop" firstAttribute="leading" secondItem="vN0-ST-HTD" secondAttribute="leadingMargin" constant="59" id="tZF-Ox-gjY"/>
                             <constraint firstItem="TLV-fK-Pop" firstAttribute="top" secondItem="hUy-Yp-0lK" secondAttribute="bottom" constant="8" id="twf-Fh-zdg"/>
                             <constraint firstItem="hdE-go-VuD" firstAttribute="top" secondItem="nPg-DW-BFS" secondAttribute="bottom" constant="56" id="xBb-Sm-KpE"/>
+                            <constraint firstAttribute="centerX" secondItem="7fB-dS-c1t" secondAttribute="centerX" id="zwd-iA-bA3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -161,6 +176,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityView" destination="7fB-dS-c1t" id="nvy-eO-UlW"/>
                         <outlet property="eventPickerView" destination="XUY-Ah-ecB" id="nBG-KF-0St"/>
                         <outlet property="previewImageView" destination="TLV-fK-Pop" id="qt6-w2-EVb"/>
                     </connections>

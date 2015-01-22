@@ -126,8 +126,8 @@
 }
 
 - (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
-    if (index < self.photos.count)
-        return [self.photos objectAtIndex:index];
+    if (index < self.thumbnails.count)
+        return [self.thumbnails objectAtIndex:index];
     return nil;
 }
 
@@ -140,8 +140,9 @@
     //init browser
     browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
     browser.enableGrid = YES;
-    browser.startOnGrid = NO;
-    browser.displayActionButton = NO;
+    browser.startOnGrid = YES;
+    browser.displayActionButton = YES;
+    browser.enableSwipeToDismiss = YES;
     [browser setCurrentPhotoIndex:0];
 }
 
@@ -169,6 +170,7 @@
             PFFile *imageFile = [event objectForKey:@"file"];
             MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:imageFile.url]];
             [self.photos addObject:photo];
+            [self.thumbnails addObject:photo];
         }
     }
 }

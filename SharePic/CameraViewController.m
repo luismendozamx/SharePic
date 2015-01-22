@@ -30,6 +30,8 @@
             self.eventPickerView.delegate = self;
         }
     }];
+    
+    self.activityView.hidden = YES;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -133,9 +135,15 @@
     NSString *fileName;
     NSString *fileType;
     
+    self.activityView.hidden = NO;
+    
     if(self.image != nil){
-        UIImage *newImage = [self resizeImage:self.image percent:0.3f];
-        fileData = UIImagePNGRepresentation(newImage);
+        if(self.image.size.width > 1000){
+            UIImage *newImage = [self resizeImage:self.image percent:0.2f];
+            fileData = UIImagePNGRepresentation(newImage);
+        }else{
+            fileData = UIImagePNGRepresentation(self.image);
+        }
         fileName = @"image.png";
         fileType = @"image";
     }else{
@@ -151,16 +159,25 @@
     [photo setObject:self.eventSelected.objectId forKey:@"eventId"];
     [photo setObject:self.currentUser.objectId forKey:@"userId"];
     
-    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if(error){
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alertView show];
         }else{
-            [self reset];
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Gracias" message:@"Se ha enviado tu foto." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alertView show];
-            [self reset];
-            [self.tabBarController setSelectedIndex:0];
+            if(succeeded){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Gracias" message:@"Se ha enviado tu foto." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertView show];
+                [self reset];
+                self.activityView.hidden = YES;
+                [self.tabBarController setSelectedIndex:0];
+                
+                
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                self.activityView.hidden = YES;
+                [alertView show];
+            }
+            
         }
     }];
 }
